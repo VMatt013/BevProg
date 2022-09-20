@@ -1,15 +1,12 @@
-#!/usr/bin/env python
-# coding: utf8
-
-Colors = {'green' : "\033[92m"}
-
 def main():
-    g = '\033[92m'
-    e = '\033[0m'
-    l = '\n'
-
+    g   = '\033[92m' #Color codes
+    e   = '\033[0m'
+    err = '\033[91m'
+    h   = '\033[95m'
+    
 	#1. Feladat
-    txt = input(l + 'Adjon meg egy mondatot:' + g + ' ')
+    print(h,'1. Feladat',e)
+    txt = input(' Adjon meg egy mondatot:' + g + ' ')
     Lett = {}
 
     for x in txt.upper().replace(' ',''):
@@ -18,24 +15,21 @@ def main():
         except:
             Lett[x] = 1
 
-    print("\nBetűk gyakorisága:",Lett,'\n')
-    print("Fordítva: ", txt[::-1],'\n')
-    print("Listába rendezve szavanként:",txt.split(' '),"\n")
+    print(e,"Betűk gyakorisága:",g,Lett,e)
+    print(" Fordítva: ",g,txt[::-1],e)
+    print(" Listába rendezve szavanként:",g,txt.split(' '),e,"\n")
 
     #2. Feladat
-
-    num ,unit= input("Adjon meg egy számot és egy mértékegységet (cm/inch): ").split(' ')
+    print(h,'2. Feladat',e)
+    num ,unit= input("Adjon meg egy számot és egy mértékegységet (number cm/inch): "+g).split(' ')
     num = int(num)
 
-
-
     if unit == "inch":
-        print(format(num * 0.393700787,".2f"), "centimeters")
+        print(format(num * 0.393700787,".2f"), "centimeters",e)
     elif unit == "cm":
-        print(format(num * 2.54,".2f"), "inches")
+        print(format(num * 2.54,".2f"), "inches",e)
     else:
-        print("Not correct unit!")
+        print(err,"Not correct unit!",e)
 
 if __name__ == "__main__":
-    #print( Colors+ ['green']"hehe" + "\033[0m")
     main()
