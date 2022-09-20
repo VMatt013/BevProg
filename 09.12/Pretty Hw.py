@@ -12,13 +12,11 @@ def main():
     txt = input(l + 'Adjon meg egy mondatot:' + g + ' ')
     Lett = {}
 
-
-
     for x in txt.upper().replace(' ',''):
         try:
-            Lett[x] = 1
-        except:
             Lett[x] += 1
+        except:
+            Lett[x] = 1
 
     print("\nBetűk gyakorisága:",Lett,'\n')
     print("Fordítva: ", txt[::-1],'\n')
