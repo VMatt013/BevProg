@@ -1,12 +1,8 @@
-from decimal import HAVE_THREADS
-from opcode import HAVE_ARGUMENT
-
-
 def Compare(A,B,C):
     L = [A,B,C]
     L.sort()
 
-    if L[-1] > (L[0]+L[1]):
+    if L[2] < (L[0]+L[1]):
         print('Van ilyen háromszög')
     else:
         print('Nincs ilyen háromszög')
