@@ -21,8 +21,7 @@ def main():
 
     #2. Feladat
     print(h,'2. Feladat',e)
-    num ,unit= input("Adjon meg egy számot és egy mértékegységet (number cm/inch): "+g).split(' ')
-    num = int(num)
+    num,unit = [int(i) for i in input("Adjon meg egy számot és egy mértékegységet (number cm/inch): "+g).split(' ')]
 
     if unit == "inch":
         print(format(num * 0.393700787,".2f"), "centimeters",e)
