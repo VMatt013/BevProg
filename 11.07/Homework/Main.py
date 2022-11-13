@@ -16,4 +16,8 @@ with open("hazi.txt",'r') as File:
             Lines.append(" ".join(newLine))
 
 with open("Eredmeny","w") as File:
-    File.write("\n".join(Lines))
+    for i in range(2,len(Lines),3):
+        try:
+            File.write(f"{Lines[i]}\n" )
+        except:
+            break
