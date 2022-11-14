@@ -2,22 +2,19 @@ import string
 Blacklist = string.punctuation + "aáeéiíoóöőuúüű"
 Lines = []
 
-with open("hazi.txt",'r') as File:
-    for line in File:
+with open("hazi.txt",'r') as Input:
+    for line in Input:
         if not (line == '' or line == '\n'):
             newLine = []
             for word in line.strip().split(" "):
-                newWord = ''
-                for char in word:
-                    if not (char in Blacklist or char in Blacklist.upper()):
-                        newWord += char
+                newWord = ''.join([char for char in word if not (char in Blacklist or char in Blacklist.upper())])
                 if not newWord == '':
                     newLine.append(newWord)
             Lines.append(" ".join(newLine))
 
-with open("Eredmeny","w") as File:
+with open("Eredmeny","w") as Output:
     for i in range(2,len(Lines),3):
         try:
-            File.write(f"{Lines[i]}\n" )
+            Output.write(f"{Lines[i]}\n" )
         except:
             break
