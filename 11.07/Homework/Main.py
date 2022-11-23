@@ -18,3 +18,13 @@ with open("Eredmeny","w") as Output:
             Output.write(f"{Lines[i]}\n" )
         except:
             break
+
+newWord = ''.join([char for char in word if not (char in Blacklist or char in Blacklist.upper())])
+
+
+for char in word:
+    if not (char in Blacklist or char in Blacklist.upper():
+        newWord += char
+
+
+
